@@ -9,6 +9,12 @@ public class FirstArrayTask {
      * @return количество четных чисел в массиве
      */
     public static int getCountEvenNumbers(int[] array) {
-        return 0;
+        int countEvenNumbers = 0;
+        for (int digit: array) {
+            if (digit % 2 == 0) {
+                countEvenNumbers++;
+            }
+        }
+        return countEvenNumbers;
     }
 }
