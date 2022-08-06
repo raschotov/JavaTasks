@@ -23,6 +23,8 @@ public class MovieAccessService {
             return "Rating R. Access is allowed.";
         } else if (age > 21) {
             return "Rating F. Access is allowed.";
+        } else if (age <= 0) {
+            return "Incorrect age, please check user with current age";
         } else {
             return "Access is denied";
         }

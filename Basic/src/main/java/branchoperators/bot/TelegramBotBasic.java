@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
 public class TelegramBotBasic {
 
     public static void main(String[] args) throws IOException {
-
         // Данный код мы вообще никак не трогаем. Просто смотрим и любуемся им.
         var bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
@@ -23,8 +22,17 @@ public class TelegramBotBasic {
                 break;
             }
 
-            // с этого момента пишем код
-
+            if (number == 1) {
+                System.out.println("Hello");
+            } else if (number == 2) {
+                System.out.println("Buy");
+            } else if (number == 3) {
+                System.out.println("What???");
+            } else {
+                System.out.println("I don't understand you, I'm turning off");
+            }
+            bufferedReader.close();
+            break;
         }
     }
 }
