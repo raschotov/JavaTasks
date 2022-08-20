@@ -1,4 +1,3 @@
 package houses;
 
-public class Villa extends House{
-}
+public class Villa extends House{}

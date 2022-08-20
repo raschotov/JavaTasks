@@ -8,18 +8,15 @@ public class CarShow {
 	}
 
 	public static void showAllCarsEngines() {
-		Car car0 = new Kia.Picanto();
-		Car car1 = new Kia.Stinger();
-		Car car2 = new Toyota.LandCruiser();
-		Car car3 = new Toyota.Supra();
-		Car car4 = new Mazda.mx5ND();
-		Car car5 = new Mazda.rx7();
+		Car car0 = new Kia("kiaEngineName");
+		Car car1 = new Toyota("toyotaEngineName");
+		Car car2 = new Mazda("mazdaEngineName");
 
-		Car[] cars = {car0, car1, car2, car3, car4, car5};
+		Car[] cars = {car0, car1, car2};
 
 		System.out.println("Названия двигателей:");
 		for (Car car: cars) {
-			System.out.println(car.getEngine());
+			System.out.println(car.getEngineType());
 		}
 	}
 }

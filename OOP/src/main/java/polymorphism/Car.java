@@ -1,15 +1,15 @@
 package polymorphism;
 
-public abstract class Car {
-	Car() {}
+public class Car {
+	private Engine engine;
 
-	private Engines engine;
+	public Car(){}
 
-	public Engines getEngine(){
-		return engine;
+	public Car(String engineName){
+		this.engine = new Engine(engineName);
 	}
 
-	public void setEngine(Engines engine) {
-		this.engine = engine;
+	public String getEngineType(){
+		return engine.getName();
 	}
 }

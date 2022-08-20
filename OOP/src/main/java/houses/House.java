@@ -1,9 +1,14 @@
 package houses;
 
 public class House {
-	Fundament fundament;
-	Residents residents;
+	private Fundament fundament;
+	private Residents[] residents;
 
-	private static class Fundament {}
-	private static class Residents {}
+	public House(){
+		Fundament fundament;
+	}
+
+	public void addResidents(Residents residents[]){
+		this.residents = residents;
+	}
 }
