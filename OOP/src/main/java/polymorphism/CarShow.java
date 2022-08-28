@@ -1,7 +1,5 @@
 package polymorphism;
 
-import java.sql.SQLOutput;
-
 public class CarShow {
 	public static void main(String[] args) {
 		showAllCarsEngines();

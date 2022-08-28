@@ -8,18 +8,17 @@ public class Animal {
 	public Animal(){}
 
 	public Animal(String type, String name, int age) {
-		if (!type.contains("[a-zA-Z]+")) {
-			System.out.println("Тип животного должен содержать только буквы");
-			this.type = null;
-		} else {
+
+		if (isStringCorrect(type)) {
 			this.type = type;
+		} else {
+			this.type = null;
 		}
 
-		if (!name.contains("[a-zA-Z]+")) {
-			System.out.println("Имя животного должно содержать только буквы");
-			this.name = null;
-		} else {
+		if (isStringCorrect(name)) {
 			this.name = name;
+		} else {
+			this.name = null;
 		}
 
 		if (age < 0) {
@@ -28,6 +27,7 @@ public class Animal {
 		} else {
 			this.age = age;
 		}
+
 	}
 
 	public void setType(String type) {
@@ -48,5 +48,15 @@ public class Animal {
 
 	public String toString(){
 		return this.type + ", " + this.name + ", "+ this.age;
+	}
+
+	//Проверка на корректность строк для конструктора
+	boolean isStringCorrect(String input){
+		if (input.matches("[a-zA-Z]+")) {
+			return true;
+		} else {
+			System.out.println("Строки должны содержать только буквы");
+			return false;
+		}
 	}
 }

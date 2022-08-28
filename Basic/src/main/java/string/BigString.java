@@ -6,10 +6,7 @@ public class BigString {
 
     private String value;
 
-    public BigString(){
-        this.value = null;
-        this.length = 0;
-    }
+    public BigString(){}
 
 
     public BigString(String value, int length) {

@@ -1,7 +1,7 @@
 package houses;
 
 public class House {
-	private Fundament fundament;
+
 	private Residents[] residents;
 
 	public House(){

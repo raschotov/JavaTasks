@@ -11,7 +11,7 @@ public class PointTest {
 	public void distance() {
 		Point point1 = new Point(15,16);
 		Point point2 = new Point(23, 42);
-		double result = Point.distance(point1, point2);
+		double result = point1.distance(point2);
 
 		//'assertEquals(double, double)' is deprecated, "fuzz factor" value needed
 		Assert.assertEquals(27.202941017470888, result, 0.001);
