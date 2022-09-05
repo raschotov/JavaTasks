@@ -19,7 +19,7 @@ public class ZooTest {
 	public void findBiggestZoo(){
 		Zoo[] zoos = AnimalTest.getZooArray();
 		String result = Zoo.findBiggestZoo(zoos);
-		String expected = "Ape planet";
+		String expected = "Zootopia";
 		Assert.assertEquals(expected, result);
 	}
 }

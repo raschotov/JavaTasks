@@ -27,14 +27,13 @@ public class Zoo {
 
 	//Needs to be improved: multiple zoos can have the same amount of animals
 	public static String findBiggestZoo(Zoo[] zoos) {
-		int indexOfBiggestZoo = 0;
-		int biggestCount = 0;
-		for (int i = 0; i < zoos.length; i++) {
-			if (zoos[i].animals.length > biggestCount) {
-				indexOfBiggestZoo = i;
+		String name = "";
+		int numberOfAnimals = 0;
+		for (Zoo zoo: zoos) {
+			if (zoo.animals.length > numberOfAnimals) {
+				numberOfAnimals = zoo.animals.length;
+				name = zoo.name;
 			}
-			indexOfBiggestZoo = i;
-		}
-		return zoos[indexOfBiggestZoo].name;
+		} return name;
 	}
 }

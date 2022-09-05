@@ -20,9 +20,24 @@ public class KeyService {
      * @return значение
      */
     public BigInteger getHash(Pair pair) {
-    	BigInteger firstBigInt = getOnlyIntegers(pair.getFirstKey());
-		BigInteger secondBigInt = getOnlyIntegers(pair.getSecondKey());
-		return new BigInteger(firstBigInt.toString() + secondBigInt.toString());
+    	//Объединение строк для ключа
+    	String key = pair.getFirstKey() + pair.getSecondKey();
+
+    	//Поиск чисел в ключе, передача их в stringBuilder
+		StringBuilder intString = new StringBuilder();
+		for (int i = 0; i < key.length(); i++) {
+			char currentChar = key.charAt(i);
+			if (contains(currentChar)) {
+				intString.append(currentChar);
+			}
+		}
+
+		//Создание и вывод хэша
+		if (intString.toString().equals("")) {
+			return BigInteger.ZERO;
+		} else {
+			return new BigInteger(intString.toString());
+		}
     }
 
     private boolean contains(char element) {
@@ -33,19 +48,4 @@ public class KeyService {
         }
         return false;
     }
-
-    private BigInteger getOnlyIntegers(String key) {
-    	StringBuilder intString = new StringBuilder();
-    	for (int i = 0; i < key.length(); i++) {
-    		char currentChar = key.charAt(i);
-			if (contains(currentChar)) {
-				intString.append(currentChar);
-			}
-		}
-    	if (intString.toString().equals("")) {
-    		return BigInteger.ZERO;
-		} else {
-			return new BigInteger(intString.toString());
-		}
-	}
 }
