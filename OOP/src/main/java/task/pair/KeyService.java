@@ -33,11 +33,7 @@ public class KeyService {
 		}
 
 		//Создание и вывод хэша
-		if (intString.toString().equals("")) {
-			return BigInteger.ZERO;
-		} else {
-			return new BigInteger(intString.toString());
-		}
+		return intString.toString().length() == 0 ? BigInteger.ZERO: new BigInteger(intString.toString());
     }
 
     private boolean contains(char element) {
