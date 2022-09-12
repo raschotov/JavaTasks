@@ -5,6 +5,20 @@ public class Zoo {
 	private double ticketPrice;
 	private Animal[] animals;
 
+	//Getters
+	public String getName() {
+		return name;
+	}
+
+	public double getTicketPrice() {
+		return ticketPrice;
+	}
+
+	public Animal[] getAnimals() {
+		return animals;
+	}
+
+	//Setters
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -15,25 +29,5 @@ public class Zoo {
 
 	public void setAnimals(Animal[] animals) {
 		this.animals = animals;
-	}
-
-	public static double getMediumPrice(Zoo[] zoos) {
-		double sum = 0;
-		for (Zoo zoo: zoos) {
-			sum = sum + zoo.ticketPrice;
-		}
-		return sum / zoos.length;
-	}
-
-	//Needs to be improved: multiple zoos can have the same amount of animals
-	public static String findBiggestZoo(Zoo[] zoos) {
-		String name = "";
-		int numberOfAnimals = 0;
-		for (Zoo zoo: zoos) {
-			if (zoo.animals.length > numberOfAnimals) {
-				numberOfAnimals = zoo.animals.length;
-				name = zoo.name;
-			}
-		} return name;
 	}
 }
